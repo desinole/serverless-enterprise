@@ -29,3 +29,29 @@ Let's talk about MSI versus User Managed Identity
 
 So that's step 1 to securing your app in the enterprise
 
+Now enterprises will require your data to be private
+How do we do that? 
+Let's see if we can put our function app in a private network
+
+Function app consumption can accept connections from private endpoints but the worker nodes are not in a private network. 
+Similar to being connected to a gated community but not being part of one.
+
+So let's look at some options for hosting function app worker nodes inside a private network
+Premium and Dedicated plan are some common options but ASE, Container apps and Kubernetes (ARC) [hosting options](https://learn.microsoft.com/en-us/azure/azure-functions/functions-scale)
+We're picking Premium for following reasons - list reasons
+
+This is what a function in an premium plan looks like 
+- architectural diagram
+- private endpoint and vnet integration
+- managed identity
+- number of instances per subnet planning
+
+Talk about app inisghts and what to monitor
+
+Talk about high-density app allocation
+
+Talk about cost
+Learn about running .NET code on functions (Java, NodeJS, Python)
+Logging and monitoring costs a lot if you log informational, should not exceed 15% of budget
+
+Talk about logicapps and connectors (hosted versus managed)
