@@ -81,3 +81,21 @@ Remember, the choice between these plans depends on your specific needs and requ
 (2) Azure Functions scale and hosting | Microsoft Learn. https://learn.microsoft.com/en-us/azure/azure-functions/functions-scale.
 (3) Azure Consumption vs Dedicated Billing Model - Serverless360. https://www.serverless360.com/blog/consumption-vs-dedicated-billing-models.
 (4) How to select the most suitable Hosting Plan for Azure ... - Medium. https://sahangunathilaka.medium.com/how-to-select-the-most-suitable-hosting-plan-for-azure-function-app-deployment-8896f0a63a6a.
+
+### What is high-density app allocation?
+
+High-Density App Allocation is a feature in Azure Functions, particularly useful in the Premium Plan, that allows multiple function apps to be deployed to the same plan². Here are some key details:
+
+1. **Per-App Scaling**: This feature enables per-app scaling at the App Service plan level, allowing an app to scale independently from the App Service plan that hosts it¹. For example, an App Service plan can be scaled to 10 instances, but an app can be set to use only five¹.
+
+2. **Allocation Approach**: Apps are allocated to available App Service plans using a best-effort approach for an even distribution across instances¹. While an even distribution is not guaranteed, the platform ensures that two instances of the same app will not be hosted on the same App Service plan instance¹.
+
+3. **Rebalancing**: Applications are rebalanced only when instances are added or removed from the App Service plan¹.
+
+4. **Configuration**: You can configure per-app scaling using PowerShell or Azure Resource Manager¹. At the app level, you can configure the number of instances the app can use in the App Service plan¹.
+
+Remember, these are general recommendations and the optimal configuration may vary based on your specific use case and workload. It's always a good idea to monitor the performance of your function apps and adjust settings as necessary.
+
+(1) Azure Functions Premium plan | Microsoft Learn. https://learn.microsoft.com/en-us/azure/azure-functions/functions-premium-plan.
+(2) Per-app scaling for high-density hosting - Azure App Service. https://learn.microsoft.com/en-us/azure/app-service/manage-scale-per-app.
+(3) Azure App Service and Azure Functions considerations for multitenancy .... https://learn.microsoft.com/en-us/azure/architecture/guide/multitenant/service/app-service.
