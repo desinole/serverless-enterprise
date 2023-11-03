@@ -51,7 +51,7 @@ Talk about app inisghts and what to monitor
 Talk about high-density app allocation
 
 talk about zone redundancy
-
+function auth
 Talk about cost
 Learn about running .NET code on functions (Java, NodeJS, Python)
 Logging and monitoring costs a lot if you log informational, should not exceed 15% of budget
@@ -61,3 +61,4 @@ where possible use idenity over connection string
 
 
 Talk about logicapps and connectors (hosted versus managed)
+
