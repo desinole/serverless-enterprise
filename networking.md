@@ -6,18 +6,21 @@ DNS should resolve to private IP address (Azure DNS private zones, own DNS Serve
 Private end point are for incoming traffic only
 
 ### VNET Integration:
+
 Virtual network integration allows your function app to access resources inside a virtual network. 
 Two types
 1. Dedicated computing price tiers (Premium, standard)
 2. ASE deploys directly into the vnet
 
 vnet integration is used in dedicated tier
+
 Outbound traffic only into vnet
 
 1. Regional vnet integration: when you connect to virtual networks in the same region, you should have a dedicated subnet in the vnet you're integrating with
 2. Gateway-required vnet integration: When you connect to vnnets in other regions or classic vnet, target vnet needs gateway
 
 ✅ TCP and UDP
+
 ❌ drive mounting, AD join, NetBios
 
 If Route All is disabled, (long story short) Internet access may fail.
@@ -44,5 +47,17 @@ Subnet planning is a huge part of deploying serverless apps in enterprise
 Currently, you can use non-HTTP trigger functions from within a virtual network in one of two ways:
 - Run your function app in a Premium plan and enable virtual network trigger support.
 - Run your function app in an App Service plan or App Service Environment.
+
+When you run a Premium plan, you can connect non-HTTP trigger functions to services that run inside a virtual network. To do this, you must enable virtual network trigger support for your function app. The Runtime Scale Monitoring setting is found in the Azure portal under Configuration > Function runtime settings.
+
+following non-HTTP trigger types are supported
+- Storage
+- Event Hubs
+- Service Bus
+- Cosmos DB
+- Durable Task
+
+You can use other triggers but they will not scale dynamically and won't scale beyond pre-warmed instance limit.
+
 
 Front Door for incoming traffic
