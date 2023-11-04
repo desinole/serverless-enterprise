@@ -60,5 +60,14 @@ Secrets always in Key vault
 where possible use idenity over connection string
 
 
+### VNET Integration:
+Runs instances in private network
+number of instances and subnet size
+what does route all mean
+
+
+
+
+
 Talk about logicapps and connectors (hosted versus managed)
 
