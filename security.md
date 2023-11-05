@@ -40,4 +40,22 @@ Important topic because developer teams may organize functions by business logic
 A system-assigned identity is tied to your application and is deleted if your app is deleted. An app can only have one system-assigned identity.
 A user-assigned identity is a standalone Azure resource that can be assigned to your app. An app can have multiple user-assigned identities.
 
+Often used instead of usernames and passwords
+
+### Restrict CORS access
+
+Defined at function app level
+Allows web apps in another domain to request HTTP endpoints
+
+### Secrets
+
+1. App Settings: Key Value pair, stored in AzureWebStorage but can be changed to Key Vault
+2. Key Vault: Will be required for connection strings, API keys and such. Can be pulled into app settings with key valut reference
+
+### Disable FTP
+By default, each function app has an FTP endpoint enabled. The FTP endpoint is accessed using deployment credentials.
+FTP isn't recommended for deploying your function code. FTP deployments are manual, and they require you to synchronize triggers.
+
+### Secure the scm endpoint
+Every function app has a corresponding scm service endpoint that used by the Advanced Tools (Kudu) service for deployments and other App Service site extensions. The scm endpoint for a function app is always a URL in the form https://<FUNCTION_APP_NAME.scm.azurewebsites.net>. When you use network isolation to secure your functions, you must also account for this endpoint.
 
