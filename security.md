@@ -12,4 +12,4 @@ Sameple call: https://funcname.azurewebsites.net/api/HttpTrigger1?code=alphanume
 | Call Durable Task extension APIs |	Function app |	System |
 | Call an extension-specific Webhook | (internal)	Function app |	system |
 
-<img src="./img/functionkeys.png" />
+<img src="./img/functionkeys.png" height="200px" />
